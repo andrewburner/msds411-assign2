@@ -1,4 +1,4 @@
-install.packages('psych')
+#install.packages('psych')
 
 library(psych)
 library(tidyverse)
@@ -28,11 +28,25 @@ qplot(c(1:28), PVE) +
   xlab("Principal Component") + 
   ylab("PVE") +
   ggtitle("Scree Plot") +
-  ylim(0, 1)
+  ylim(0, 0.25)
 
 qplot(c(1:28), cumsum(PVE)) + 
   geom_line() + 
   xlab("Principal Component") + 
   ylab(NULL) + 
   ggtitle("Cumulative Scree Plot") +
-  ylim(0,1)
+  ylim(1,0.5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
