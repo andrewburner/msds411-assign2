@@ -3,6 +3,7 @@
 library(psych)
 library(tidyverse)
 library(corrplot)
+library(formattable)
 
 
 bfi_data <- psych::bfi
@@ -38,11 +39,12 @@ qplot(c(1:28), cumsum(PVE)) +
   ylim(1,0.5)
 
 
+factor_data <- fa(r = corr_bfi, nfactors = 7, rotate = 'varimax', fm = 'ml')
+factor_data <- factanal(covmat = corr_bfi, n.obs = 2236, factors = 7, rotation = 'varimax')
+names(factor_data)
+write.csv(factor_data$loadings, file = 'loadings2.csv')
 
-
-
-
-
+summary(factor_data)
 
 
 
